@@ -3,6 +3,7 @@ import ExpenseCategory from '../components/ExpenseCategory';
 
 import ExpenseCategoryData from '../data/ExpenseCategoryData';
 import Loader from '../components/Loader';
+import Map from '../components/Map';
 
 import {useParams} from "react-router-dom"
 
@@ -65,7 +66,17 @@ const CityInfo = () => {
   useEffect( ()=>{
     getData();
   },[]);
+
+  console.log(data);
+
   if(!loading && data){
+    if(data.error==="Couldn't find a city with a given name or id"){
+      return (
+        <div className='w-screen h-screen flex justify-center items-center'>
+          <h1 className='font-black m-10 tracking-wider text-xl'>Sorry we could not find the location :(</h1>
+        </div>
+      )
+    }
     return (
       
       <div className='h-screen flex items-center flex-col'>
@@ -78,10 +89,12 @@ const CityInfo = () => {
               <ExpenseCategory key={category.id} header={category.headar} whichExpense={category.whichExpense} data={data.prices} currency={currency}/>
             )
           })}
-          
+          {/* <div className='p-8 flex justify-center items-center'>
+            <Bar/>
+          </div> */}
+          <Map country={data.country_name} city={data.city_name}/>
           
 
-          
       </div>
     )
   }
