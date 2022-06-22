@@ -34,7 +34,7 @@ const CityInfo = () => {
 
   const getData= async () => {
     
-    setLoading(false);
+    
 
     if(data && data.city_name=== params.city){
       console.log("request was not made");
@@ -55,20 +55,17 @@ const CityInfo = () => {
         console.error(error);
       });
 
-      setLoading(false);
+      
     }
+    setLoading(false);
     
       
   } 
 
   useEffect( ()=>{
     getData();
-  },[params.city, params.country]);
-  if(loading){
-    return (
-      <Loader/>
-    )
-  }
+  },[]);
+  if(!loading && data){
     return (
       
       <div className='h-screen flex items-center flex-col'>
@@ -86,6 +83,10 @@ const CityInfo = () => {
 
           
       </div>
+    )
+  }
+    return (
+      <Loader/>
     )
   }
 

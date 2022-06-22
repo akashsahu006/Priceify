@@ -2,6 +2,7 @@ import Home from "./Home"
 import CityInfo from "./CityInfo"
 import {Routes, Route} from "react-router-dom"
 
+
 const Pages = () => {
   return (
     
