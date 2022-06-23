@@ -12,6 +12,11 @@ const ExpenseCategoryData = [
         
     },
     {
+        id:5,
+        headar: "Rent Expense",
+        whichExpense: "Rent Per Month",
+    },
+    {
         id: 2,
         headar: "Property Prices",
         whichExpense:"Buy Apartment",
@@ -22,6 +27,11 @@ const ExpenseCategoryData = [
         headar: "School Expenses",
         whichExpense:"Childcare",
         
+    },
+    {
+        id:4,
+        headar: "Clothing Expenses",
+        whichExpense: "Clothing And Shoes",
     },
 ]
 

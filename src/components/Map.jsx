@@ -6,7 +6,7 @@ import axios from 'axios'
 const Map = (props) => {
     const axios = require("axios");
     
-    const [center, setCenter] = useState({});
+    const [center, setCenter] = useState({lat: 0, lng: 0});
 
     const geoCode = () => {
         const location = props.city + " " + props.country;
@@ -16,11 +16,11 @@ const Map = (props) => {
                 key: "AIzaSyCzvliBqjwkg0J5zbZ7IfbAJ6umlApYuec"
             }
         }).then(function (response){
-            console.log(response.data.results[0].geometry.location);
             setCenter(response.data.results[0].geometry.location);
         }).catch(function (error){
             console.log(error);
         });
+
     }
     
     useEffect(() => {
@@ -30,6 +30,7 @@ const Map = (props) => {
     const {isLoaded} = useLoadScript({
         googleMapsApiKey: "AIzaSyCzvliBqjwkg0J5zbZ7IfbAJ6umlApYuec",
     })
+
      
     if(!isLoaded){
         return <Loader/>
@@ -39,7 +40,6 @@ const Map = (props) => {
             
                 <GoogleMap zoom={10} center={center} mapContainerClassName="map-container">
                 </GoogleMap>
-
           )
     }
   

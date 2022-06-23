@@ -38,7 +38,7 @@ const CityInfo = () => {
     
 
     if(data && data.city_name=== params.city){
-      console.log("request was not made");
+      // console.log("request was not made");
       
 
       
@@ -51,7 +51,7 @@ const CityInfo = () => {
 
         localStorage.setItem("data",JSON.stringify(response.data));
         
-        console.log("request was made");
+        // console.log("request was made");
       }).catch(function (error) {
         console.error(error);
       });
@@ -67,7 +67,6 @@ const CityInfo = () => {
     getData();
   },[]);
 
-  console.log(data);
 
   if(!loading && data){
     if(data.error==="Couldn't find a city with a given name or id"){
@@ -92,8 +91,9 @@ const CityInfo = () => {
           {/* <div className='p-8 flex justify-center items-center'>
             <Bar/>
           </div> */}
-          <Map country={data.country_name} city={data.city_name}/>
-          
+          <div className='flex justify-center items-center w-screen bg-red-300'>
+            <Map country={data.country_name} city={data.city_name}/>
+          </div>
 
       </div>
     )

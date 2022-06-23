@@ -12,9 +12,7 @@ const Home = () => {
       <h2 className='mb-12 text-white text-sm font-antic font-semibold tracking-widest'>Get price information of different things in your destination and plan your expenses beforehand!</h2>
       <SearchBar/>
 
-      <h2 className='my-4 font-semibold text-white'>
-        Website is under Construction
-      </h2>
+      
     </div>
   )
 }
