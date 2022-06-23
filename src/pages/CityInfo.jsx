@@ -26,7 +26,7 @@ const CityInfo = () => {
     url: 'https://cost-of-living-and-prices.p.rapidapi.com/prices',
     params: {city_name: params.city, country_name: params.country},
     headers: {
-      'X-RapidAPI-Key': '55db3f1769mshfb4664e788157ecp150301jsn63e996f41ee4',
+      'X-RapidAPI-Key': process.env.REACT_APP_RAPIDAPI_KEY,
       'X-RapidAPI-Host': 'cost-of-living-and-prices.p.rapidapi.com'
     }
   };
@@ -91,7 +91,7 @@ const CityInfo = () => {
           {/* <div className='p-8 flex justify-center items-center'>
             <Bar/>
           </div> */}
-          <div className='flex justify-center items-center w-screen bg-red-300'>
+          <div className='flex justify-center items-center w-screen '>
             <Map country={data.country_name} city={data.city_name}/>
           </div>
 

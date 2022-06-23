@@ -28,7 +28,7 @@ const Map = (props) => {
     },[props.city]);
 
     const {isLoaded} = useLoadScript({
-        googleMapsApiKey: "AIzaSyCzvliBqjwkg0J5zbZ7IfbAJ6umlApYuec",
+        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_KEY,
     })
 
      
