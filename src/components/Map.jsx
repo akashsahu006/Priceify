@@ -13,7 +13,7 @@ const Map = (props) => {
         axios.get('https://maps.googleapis.com/maps/api/geocode/json',{
             params: {
                 address: location,
-                key: "AIzaSyCzvliBqjwkg0J5zbZ7IfbAJ6umlApYuec"
+                key: process.env.REACT_APP_GOOGLE_MAP_KEY,
             }
         }).then(function (response){
             setCenter(response.data.results[0].geometry.location);
