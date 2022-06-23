@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import Loader from './Loader'
-import {GoogleMap, useLoadScript, Marker} from '@react-google-maps/api'
+import MapComponent from './MapComponent'
 import axios from 'axios'
 
 const Map = (props) => {
@@ -27,21 +26,12 @@ const Map = (props) => {
         geoCode();
     },[props.city]);
 
-    const {isLoaded} = useLoadScript({
-        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_KEY,
-    })
+    
 
      
-    if(!isLoaded){
-        return <Loader/>
-    }
-    else{
-        return (
-            
-                <GoogleMap zoom={10} center={center} mapContainerClassName="map-container">
-                </GoogleMap>
-          )
-    }
+    return (
+            <MapComponent center={center}/>
+        )
   
 }
 
