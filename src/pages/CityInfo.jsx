@@ -26,7 +26,7 @@ const CityInfo = () => {
     url: 'https://cost-of-living-and-prices.p.rapidapi.com/prices',
     params: {city_name: params.city, country_name: params.country},
     headers: {
-      'X-RapidAPI-Key': "55db3f1769mshfb4664e788157ecp150301jsn63e996f41ee4",
+      'X-RapidAPI-Key': process.env.REACT_APP_RAPIDAPI_KEY,
       'X-RapidAPI-Host': 'cost-of-living-and-prices.p.rapidapi.com'
     }
   };
